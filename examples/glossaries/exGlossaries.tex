@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[toc]{glossaries}
+ 
+\makeglossaries
+ 
+ 
+\newglossaryentry{glsy}
+{
+    name=glossary,
+    description={Acronyms and terms which are generally unknown or new to common readers.}
+}
+ 
+\title{How to use glossary in LaTeX}
+\author{ }
+\date{ }
+ 
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{First Section} 
+LaTeX is very useful and can use \gls{glsy}. 
+ 
+ 
+\printglossary
+ 
+\end{document}
