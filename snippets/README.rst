@@ -9,6 +9,7 @@ Basic Documents
 - `basic document <basicDoc.tex>`_
 - `basic document with bibtex <basicDoc-bib.tex>`_
 - `basic document with glossaries <basicDoc-gls.tex>`_
+- `basic document with bibtex and glossaries <basicDoc-bib-gls.tex>`_
 
 
 Figures
@@ -25,6 +26,7 @@ Equation
 
 Makefile
 ---------------------------------------------------------------------------------
+**Script**
 
 Makefile berikut dapat meng-compile tex file yang berisi bibtex dan glossaries. 
 
@@ -49,3 +51,17 @@ Makefile berikut dapat meng-compile tex file yang berisi bibtex dan glossaries.
         gls:
 	        makeglossaries main
 
+        clean: 
+		mv main.aux main.bbl main.glg main.glo main.gls main.ist main.blg main.log build
+
+**Generate pdf**
+
+::
+
+	make all
+
+**Clean auxiliary files**
+
+::
+
+	make clean

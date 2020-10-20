@@ -1,0 +1,21 @@
+\documentclass[11pt]{article}
+\usepackage{cite}
+\usepackage{glossaries} 
+\makeglossaries  
+\newglossaryentry{sample}{name={sample},description={an example}}
+
+\begin{document}
+
+\title{My Article}
+\author{Nobody Jr.}
+\date{Today}
+\maketitle
+
+Blablabla said Nobody ~\cite{Nobody06}.
+
+\gls{sample}, \gls[format=textbf]{sample}. 
+
+\bibliography{mybib}{}
+\bibliographystyle{plain}
+\printglossaries  
+\end{document}

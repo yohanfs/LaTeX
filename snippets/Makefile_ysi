@@ -16,3 +16,6 @@ bib:
 	
 gls:
 	makeglossaries main
+	
+clean: 
+	mv main.aux main.bbl main.glg main.glo main.gls main.ist main.blg main.log build

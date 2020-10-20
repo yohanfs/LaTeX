@@ -453,6 +453,7 @@ html,body{        margin: auto;
 <li><a class="reference external" href="basicDoc.tex">basic document</a></li>
 <li><a class="reference external" href="basicDoc-bib.tex">basic document with bibtex</a></li>
 <li><a class="reference external" href="basicDoc-gls.tex">basic document with glossaries</a></li>
+<li><a class="reference external" href="basicDoc-bib-gls.tex">basic document with bibtex and glossaries</a></li>
 </ul>
 </div>
 <div class="section" id="figures">
@@ -470,6 +471,7 @@ html,body{        margin: auto;
 </div>
 <div class="section" id="makefile">
 <h1><a class="toc-backref" href="#id5">Makefile</a></h1>
+<p><strong>Script</strong></p>
 <p>Makefile berikut dapat meng-compile tex file yang berisi bibtex dan glossaries.</p>
 <pre class="literal-block">
 .PHONY: all tex1 tex2 tex3 bib gls
@@ -490,6 +492,17 @@ bib:
 
 gls:
         makeglossaries main
+
+clean:
+        mv main.aux main.bbl main.glg main.glo main.gls main.ist main.blg main.log build
+</pre>
+<p><strong>Generate pdf</strong></p>
+<pre class="literal-block">
+make all
+</pre>
+<p><strong>Clean auxiliary files</strong></p>
+<pre class="literal-block">
+make clean
 </pre>
 </div>
 </div>
