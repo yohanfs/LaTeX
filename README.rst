@@ -4,7 +4,7 @@ LaTeX
 .. contents:: **Daftar Isi**
 
 
-Softwares
+Softwares/Packages/Tools
 ---------------------------------------------------------------------------------
 
 - Tex distribution
@@ -12,6 +12,8 @@ Softwares
    + `Tex live <https://tug.org/texlive/>`_
 - Editor
    + `Texstudio <https://www.texstudio.org/>`_
+- `Bibtex <http://www.bibtex.org/>`_
+- `Glossaries <https://ctan.mc1.root.project-creative.net/macros/latex/contrib/glossaries/glossaries-user.html>`_
 
 Command Line
 ---------------------------------------------------------------------------------
@@ -43,29 +45,14 @@ Command Line
 My Templates
 ---------------------------------------------------------------------------------
 
-- `yohan_template_article.tex <templates/yohan_template_article.tex>`_
-- `yohan_article.cls <templates/yohan_article.cls>`_
+- `yohan_template_article.tex <templates_ysi/yohan_template_article.tex>`_
+- `yohan_article.cls <templates_ysi/yohan_article.cls>`_
 
 .. image:: images/templateLatexSederhana.PNG  
 
 Snippets
 ---------------------------------------------------------------------------------
 
-Basic Documents
-*********************************************************************************
+- `Snippets <snippets/README.rst>`_
 
-- `basic document <basicDoc.tex>`_
-
-
-Figures
-*********************************************************************************
-
-- `one figure <onefigure.tex>`_
-- `two figures <twofigures.tex>`_
-
-
-Equation
-*********************************************************************************
-
-- `equation <equation.tex>`_
 

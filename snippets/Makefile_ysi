@@ -1,0 +1,18 @@
+.PHONY: all tex1 tex2 tex3 bib gls
+
+all: tex1 bib gls tex2 tex3
+
+tex1:
+	pdflatex main
+
+tex2:
+	pdflatex main
+
+tex3:
+	pdflatex main
+
+bib:
+	bibtex main
+	
+gls:
+	makeglossaries main
