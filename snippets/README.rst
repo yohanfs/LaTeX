@@ -26,23 +26,24 @@ Equation
 
 Makefile
 ---------------------------------------------------------------------------------
-**Script**
+
+**Standard Script**
 
 Makefile berikut dapat meng-compile tex file yang berisi bibtex dan glossaries. 
 
 ::
 
-        .PHONY: all tex1 tex2 tex3 bib gls
+        .PHONY: all build1 build2 build3 bib gls
 
-        all: tex1 bib gls tex2 tex3
+        all: build1 bib gls build2 build3
 
-        tex1:
+        build1:
 	        pdflatex main
 
-        tex2:
+        build2:
 	        pdflatex main
 
-        tex3:
+        build3:
 	        pdflatex main
 
         bib:
@@ -51,8 +52,30 @@ Makefile berikut dapat meng-compile tex file yang berisi bibtex dan glossaries.
         gls:
 	        makeglossaries main
 
-        clean: 
-		mv main.aux main.bbl main.glg main.glo main.gls main.ist main.blg main.log build
+
+**Script dengan tambahan fitur untuk menyimpan auxiliary files di folder build**
+
+::
+
+        .PHONY: all build1 build2 build3 bib gls
+
+        all: build1 bib gls build2 build3
+
+        build1:
+	        pdflatex -output-directory=build -interaction=batchmode main
+
+        build2:
+	        pdflatex -output-directory=build -interaction=batchmode main
+
+        build3:
+	        pdflatex -output-directory=build -interaction=batchmode main
+
+        bib:
+	        biber --input-directory=build --output-directory=build main
+
+        gls:
+	        makeglossaries -d build main
+
 
 **Generate pdf**
 
@@ -65,3 +88,7 @@ Makefile berikut dapat meng-compile tex file yang berisi bibtex dan glossaries.
 ::
 
 	make clean
+
+**Referensi**
+
+- `Hiding latex metafiles <https://texblog.org/2015/08/20/hiding-latex-metafiles-from-project-directory/>`_
