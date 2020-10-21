@@ -42,6 +42,30 @@ Command Line
       $ pdflatex filename
       $ pdflatex filename
 
+**Catatan**
+      
+Pdflatex memiliki 4 *interaction modes*. Mode tersebut adalah untuk menampilkan
+proses compiling di terminal. 
+
+- batchmode: tidak ada yang ditampilkan
+- nonstopmode: diagnostic message akan ditampilkan, tapi tidak ada interaksi
+  dengan user seperti batchmode
+- scrollmode: akan berhenti pada *missing files* atau jika keyboard input
+  dibutuhkan
+- errorstopmode: akan berhenti pada setiap error dan menunggu intervensi dari
+  user
+
+Contoh penggunaan:
+
+::
+
+        $ pdflatex -interaction=batchmode filename
+
+**Referensi**
+
+- `interaction modes <https://tex.stackexchange.com/questions/91592/where-to-find-official-and-extended-documentation-for-tex-latexs-commandlin>`_
+
+
 My Templates
 ---------------------------------------------------------------------------------
 

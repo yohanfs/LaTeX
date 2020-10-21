@@ -497,6 +497,26 @@ $ makeglossaries filename
 $ pdflatex filename
 $ pdflatex filename
 </pre>
+<p><strong>Catatan</strong></p>
+<p>Pdflatex memiliki 4 <em>interaction modes</em>. Mode tersebut adalah untuk menampilkan
+proses compiling di terminal.</p>
+<ul class="simple">
+<li>batchmode: tidak ada yang ditampilkan</li>
+<li>nonstopmode: diagnostic message akan ditampilkan, tapi tidak ada interaksi
+dengan user seperti batchmode</li>
+<li>scrollmode: akan berhenti pada <em>missing files</em> atau jika keyboard input
+dibutuhkan</li>
+<li>errorstopmode: akan berhenti pada setiap error dan menunggu intervensi dari
+user</li>
+</ul>
+<p>Contoh penggunaan:</p>
+<pre class="literal-block">
+$ pdflatex -interaction=batchmode filename
+</pre>
+<p><strong>Referensi</strong></p>
+<ul class="simple">
+<li><a class="reference external" href="https://tex.stackexchange.com/questions/91592/where-to-find-official-and-extended-documentation-for-tex-latexs-commandlin">interaction modes</a></li>
+</ul>
 </div>
 <div class="section" id="my-templates">
 <h1><a class="toc-backref" href="#id4">My Templates</a></h1>
