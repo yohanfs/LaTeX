@@ -444,7 +444,13 @@ html,body{        margin: auto;
 <li><a class="reference internal" href="#basic-documents" id="id2">Basic Documents</a></li>
 <li><a class="reference internal" href="#figures" id="id3">Figures</a></li>
 <li><a class="reference internal" href="#equation" id="id4">Equation</a></li>
-<li><a class="reference internal" href="#makefile" id="id5">Makefile</a></li>
+<li><a class="reference internal" href="#makefile" id="id5">Makefile</a><ul>
+<li><a class="reference internal" href="#standard-script" id="id6">Standard Script</a></li>
+<li><a class="reference internal" href="#script-dengan-tambahan-fitur-untuk-menyimpan-auxiliary-files-di-folder-build" id="id7">Script dengan tambahan fitur untuk menyimpan auxiliary files di folder build</a></li>
+<li><a class="reference internal" href="#alternatif-penulisan-makefile-versi-1" id="id8">Alternatif Penulisan Makefile Versi 1</a></li>
+<li><a class="reference internal" href="#alternatif-penulisan-makefile-versi-2" id="id9">Alternatif Penulisan Makefile Versi 2</a></li>
+</ul>
+</li>
 </ul>
 </div>
 <div class="section" id="basic-documents">
@@ -471,7 +477,8 @@ html,body{        margin: auto;
 </div>
 <div class="section" id="makefile">
 <h1><a class="toc-backref" href="#id5">Makefile</a></h1>
-<p><strong>Standard Script</strong></p>
+<div class="section" id="standard-script">
+<h2><a class="toc-backref" href="#id6">Standard Script</a></h2>
 <p>Makefile berikut dapat meng-compile tex file yang berisi bibtex dan glossaries.</p>
 <pre class="literal-block">
 .PHONY: all build1 build2 build3 bib gls
@@ -493,20 +500,22 @@ bib:
 gls:
         makeglossaries main
 </pre>
-<p><strong>Script dengan tambahan fitur untuk menyimpan auxiliary files di folder build</strong></p>
+</div>
+<div class="section" id="script-dengan-tambahan-fitur-untuk-menyimpan-auxiliary-files-di-folder-build">
+<h2><a class="toc-backref" href="#id7">Script dengan tambahan fitur untuk menyimpan auxiliary files di folder build</a></h2>
 <pre class="literal-block">
 .PHONY: all build1 build2 build3 bib gls
 
 all: build1 bib gls build2 build3
 
 build1:
-        pdflatex -output-directory=build main
+        pdflatex -output-directory=build -interaction=batchmode main
 
 build2:
-        pdflatex -output-directory=build main
+        pdflatex -output-directory=build -interaction=batchmode main
 
 build3:
-        pdflatex -output-directory=build main
+        pdflatex -output-directory=build -interaction=batchmode main
 
 bib:
         biber --input-directory=build --output-directory=build main
@@ -514,18 +523,60 @@ bib:
 gls:
         makeglossaries -d build main
 </pre>
-<p><strong>Generate pdf</strong></p>
+</div>
+<div class="section" id="alternatif-penulisan-makefile-versi-1">
+<h2><a class="toc-backref" href="#id8">Alternatif Penulisan Makefile Versi 1</a></h2>
+<p>Pada contoh di atas, setiap line command ditulis dalam rule yang terpisah. Semua
+line tersebut sebenarnya dapat ditulis dalam rule yang sama. Contohnya adalah:</p>
 <pre class="literal-block">
-make all
+.PHONY: all
+
+all:
+        pdflatex -output-directory=build -interaction=batchmode main
+        biber --input-directory=build --output-directory=build main
+        makeglossaries -d build main
+        pdflatex -output-directory=build -interaction=batchmode main
+        pdflatex -output-directory=build -interaction=batchmode main
 </pre>
-<p><strong>Clean auxiliary files</strong></p>
+</div>
+<div class="section" id="alternatif-penulisan-makefile-versi-2">
+<h2><a class="toc-backref" href="#id9">Alternatif Penulisan Makefile Versi 2</a></h2>
+<p>Agar dapat digunakan secara general, maka nama file yang berulang diganti dengan
+variabel untuk memudahkan dalam mengganti nama file tersebut.</p>
 <pre class="literal-block">
-make clean
+.PHONY: update all
+
+auxFolder := build
+mode      := batchmode
+filename  := main
+
+update:
+        &#64;echo &quot;simple update&quot;
+        &#64;echo &quot;-------------&quot;
+        pdflatex -output-directory=$(auxFolder) -interaction=$(mode) $(filename)
+
+all:
+        &#64;echo &quot;run pdflatex (1)&quot;
+        &#64;echo &quot;----------------&quot;
+        pdflatex -output-directory=$(auxFolder) -interaction=$(mode) $(filename)
+        &#64;echo &quot;run biber&quot;
+        &#64;echo &quot;---------&quot;
+        biber --input-directory=$(auxFolder) --output-directory=$(auxFolder) $(filename)
+        &#64;echo &quot;run glossaries&quot;
+        &#64;echo &quot;--------------&quot;
+        makeglossaries -d $(auxFolder) $(filename)
+        &#64;echo &quot;run pdflatex (2)&quot;
+        &#64;echo &quot;----------------&quot;
+        pdflatex -output-directory=$(auxFolder) -interaction=$(mode) $(filename)
+        &#64;echo &quot;run pdflatex (3)&quot;
+        &#64;echo &quot;----------------&quot;
+        pdflatex -output-directory=$(auxFolder) -interaction=$(mode) $(filename)
 </pre>
 <p><strong>Referensi</strong></p>
 <ul class="simple">
 <li><a class="reference external" href="https://texblog.org/2015/08/20/hiding-latex-metafiles-from-project-directory/">Hiding latex metafiles</a></li>
 </ul>
+</div>
 </div>
 </div>
 </body>

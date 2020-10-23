@@ -27,7 +27,8 @@ Equation
 Makefile
 ---------------------------------------------------------------------------------
 
-**Standard Script**
+Standard Script
+*********************************************************************************
 
 Makefile berikut dapat meng-compile tex file yang berisi bibtex dan glossaries. 
 
@@ -53,7 +54,8 @@ Makefile berikut dapat meng-compile tex file yang berisi bibtex dan glossaries.
 	        makeglossaries main
 
 
-**Script dengan tambahan fitur untuk menyimpan auxiliary files di folder build**
+Script dengan tambahan fitur untuk menyimpan auxiliary files di folder build
+*********************************************************************************
 
 ::
 
@@ -77,17 +79,60 @@ Makefile berikut dapat meng-compile tex file yang berisi bibtex dan glossaries.
 	        makeglossaries -d build main
 
 
-**Generate pdf**
+Alternatif Penulisan Makefile Versi 1
+*********************************************************************************
+
+Pada contoh di atas, setiap line command ditulis dalam rule yang terpisah. Semua
+line tersebut sebenarnya dapat ditulis dalam rule yang sama. Contohnya adalah:
 
 ::
 
-	make all
+        .PHONY: all
 
-**Clean auxiliary files**
+        all:
+	        pdflatex -output-directory=build -interaction=batchmode main
+	        biber --input-directory=build --output-directory=build main
+	        makeglossaries -d build main
+	        pdflatex -output-directory=build -interaction=batchmode main
+	        pdflatex -output-directory=build -interaction=batchmode main
+
+Alternatif Penulisan Makefile Versi 2
+*********************************************************************************
+
+Agar dapat digunakan secara general, maka nama file yang berulang diganti dengan
+variabel untuk memudahkan dalam mengganti nama file tersebut. 
 
 ::
 
-	make clean
+        .PHONY: update all
+
+        auxFolder := build
+        mode      := batchmode
+        filename  := main
+
+        update:
+                @echo "simple update"
+                @echo "-------------"
+                pdflatex -output-directory=$(auxFolder) -interaction=$(mode) $(filename)
+
+        all:
+                @echo "run pdflatex (1)"
+                @echo "----------------"
+                pdflatex -output-directory=$(auxFolder) -interaction=$(mode) $(filename)
+                @echo "run biber"
+                @echo "---------"
+                biber --input-directory=$(auxFolder) --output-directory=$(auxFolder) $(filename)
+                @echo "run glossaries"
+                @echo "--------------"
+                makeglossaries -d $(auxFolder) $(filename)
+                @echo "run pdflatex (2)"
+                @echo "----------------"
+                pdflatex -output-directory=$(auxFolder) -interaction=$(mode) $(filename)
+                @echo "run pdflatex (3)"
+                @echo "----------------"
+                pdflatex -output-directory=$(auxFolder) -interaction=$(mode) $(filename)
+
+
 
 **Referensi**
 
