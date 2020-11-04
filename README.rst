@@ -10,6 +10,7 @@ Softwares/Packages/Tools
 - Tex distribution
    + `Miktex <https://miktex.org/>`_
    + `Tex live <https://tug.org/texlive/>`_
+   + `Tex live vs Miktex`_
 - Editor
    + `Texstudio <https://www.texstudio.org/>`_
 - `Bibtex <http://www.bibtex.org/>`_
@@ -80,3 +81,4 @@ Snippets
 - `Snippets <snippets/README.rst>`_
 
 
+.. _`Tex live vs Miktex`: https://www.texdev.net/2016/12/18/tex-on-windows-tex-live-versus-miktex-revisited/
