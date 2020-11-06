@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{caption}
+
+\begin{document}
+
+\begin{figure}[!ht]
+	\centering
+        \begin{subfigure}[t]{.4\linewidth}
+        	\centering
+                \includegraphics[width=0.25\textwidth]{example-image-a}
+                \caption{Gambar No. 1}\label{fig:a}
+        \end{subfigure}
+        \begin{subfigure}[t]{.4\linewidth}
+        	\centering
+                \includegraphics[width=0.25\textwidth]{example-image-a}
+                \caption{Gambar No. 2}\label{fig:b}
+	\end{subfigure}
+\caption{2 buah gambar}\label{fig:contoh}
+\end{figure}
+
+
+Ini merujuk ke Gbr.~\ref{fig:a}. Ini merujuk Gbr.~\ref{fig:b}. Ini merujuk ke
+Gbr.~\ref{fig:contoh}.
+
+\end{document}

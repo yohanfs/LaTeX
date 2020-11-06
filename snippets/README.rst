@@ -1,33 +1,106 @@
 Snippets
 =================================================================================
 
+:Penulis: Yohan Sidik
+
+
 .. contents:: **Daftar Isi**
 
-Basic Documents
+Basic Document Templates
 ---------------------------------------------------------------------------------
 
-- `basic document <basicDoc.tex>`_
-- `basic document with bibtex <basicDoc-bib.tex>`_
-- `basic document with glossaries <basicDoc-gls.tex>`_
-- `basic document with bibtex and glossaries <basicDoc-bib-gls.tex>`_
+Basic document 
+*********************************************************************************
+
+::
+
+	\documentclass{article}
+	\begin{document}
+	  Hello World!
+	\end{document}
 
 
-Figures
----------------------------------------------------------------------------------
+Basic document with bibtex 
+*********************************************************************************
 
-- `one figure <onefigure.tex>`_
-- `two figures <twofigures.tex>`_
+**Paket**
+
+cite
+
+**Contoh**
+
+::
+
+	\documentclass[11pt]{article}
+	\usepackage{cite}
+
+	\begin{document}
+
+	\title{My Article}
+	\author{Nobody Jr.}
+	\date{Today}
+	\maketitle
+
+	Blablabla said Nobody ~\cite{Nobody06}.
+
+	\bibliography{mybib}{}
+	\bibliographystyle{plain}
+	\end{document}
 
 
-Equation
----------------------------------------------------------------------------------
+Basic document with glossaries 
+*********************************************************************************
 
-- `equation <equation.tex>`_
+**Paket**
 
-Table
----------------------------------------------------------------------------------
+glossaries
 
-- `table <table.tex>`_
+**Contoh**
+::
+
+	\documentclass{article}  
+	\usepackage{glossaries}  
+	\makeglossaries  
+	\newglossaryentry{sample}{name={sample},description={an example}}  
+	\begin{document}  
+	\gls{sample}, \gls[format=textbf]{sample}.  
+	\printglossaries  
+	\end{document}
+
+Basic document with bibtex and glossaries
+*********************************************************************************
+
+**Paket**
+
+=================== ======================
+cite                 glossaries
+=================== ======================
+
+**Contoh**
+
+::
+
+	\documentclass[11pt]{article}
+	\usepackage{cite}
+	\usepackage{glossaries} 
+	\makeglossaries  
+	\newglossaryentry{sample}{name={sample},description={an example}}
+
+	\begin{document}
+
+	\title{My Article}
+	\author{Nobody Jr.}
+	\date{Today}
+	\maketitle
+
+	Blablabla said Nobody ~\cite{Nobody06}.
+
+	\gls{sample}, \gls[format=textbf]{sample}. 
+
+	\bibliography{mybib}{}
+	\bibliographystyle{plain}
+	\printglossaries  
+	\end{document}
 
 Makefile
 ---------------------------------------------------------------------------------
@@ -142,3 +215,149 @@ variabel untuk memudahkan dalam mengganti nama file tersebut.
 **Referensi**
 
 - `Hiding latex metafiles <https://texblog.org/2015/08/20/hiding-latex-metafiles-from-project-directory/>`_
+
+Figures
+---------------------------------------------------------------------------------
+
+1 Figure
+*********************************************************************************
+
+**Paket**
+
+graphics
+
+**Contoh**
+
+::
+
+	\documentclass{article}
+	\usepackage{graphicx}
+
+	\begin{document}
+
+	\begin{figure}[!hb]
+		\centering
+		\includegraphics[width=3cm]{example-image-a}
+		\caption{Contoh gambar}
+		\label{fig:main}
+	\end{figure}
+
+	Contoh gambar ditunjukkan pada Gbr.~\ref{fig:main}. 
+
+	\end{document}
+
+**Hasil compile**
+
+.. image:: figures/onefigure/main.png
+
+2 Figures
+*********************************************************************************
+
+**Paket**
+
+============== ================ ==================
+graphicx        caption          subcaption
+============== ================ ==================
+
+**Contoh**
+
+::
+
+	\documentclass{article}
+	\usepackage{graphicx}
+	\usepackage{subcaption}
+	\usepackage{caption}
+
+	\begin{document}
+
+	\begin{figure}[!ht]
+		\centering
+		\begin{subfigure}[t]{.4\linewidth}
+			\centering
+			\includegraphics[width=0.25\textwidth]{example-image-a}
+			\caption{Gambar No. 1}\label{fig:a}
+		\end{subfigure}
+		\begin{subfigure}[t]{.4\linewidth}
+			\centering
+			\includegraphics[width=0.25\textwidth]{example-image-a}
+			\caption{Gambar No. 2}\label{fig:b}
+		\end{subfigure}
+	\caption{2 buah gambar}\label{fig:contoh}
+	\end{figure}
+
+	Ini merujuk ke Gbr.~\ref{fig:a}. Ini merujuk Gbr.~\ref{fig:b}. Ini merujuk ke
+	Gbr.~\ref{fig:contoh}.
+
+	\end{document}
+
+**Hasil compile**
+
+.. image:: figures/twofigures/main.png
+
+Equation
+---------------------------------------------------------------------------------
+
+**Contoh**
+
+::
+
+	\documentclass{article}
+
+	\begin{document}
+
+	\begin{equation}
+	   \label{eq:contoh}
+	   y=x^2
+	\end{equation}
+
+	Merujuk ke persamaan \ref{eq:contoh}. 
+
+	\end{document}
+
+**Hasil compile**
+
+.. image:: equations/main.png
+
+
+
+Table
+---------------------------------------------------------------------------------
+
+**Paket**
+
+=============== ===============
+ booktabs        siunitx
+=============== ===============
+
+**Contoh**
+
+::
+
+	\documentclass{article}
+	\usepackage[utf8]{inputenc}
+	\usepackage{booktabs}
+	\usepackage{siunitx}
+
+	\begin{document}
+
+	\begin{table}[!h]
+		\caption{Generator parameters}
+		\label{tab:genparameters}
+		\centering
+		\begin{tabular}{ll}
+			\toprule
+			Parameters & Values \\
+			\midrule
+			Mechanical power $P_{\mathrm{M}}$ & \SI{3}{\mega\watt} \\
+			Mechanical torque $T_{\mathrm{m}}$ & \SI{71.62}{\kilo\newton\meter} \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+
+	\end{document}
+
+
+**Hasil compile**
+
+.. image:: tables/main.png
+

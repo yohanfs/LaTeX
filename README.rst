@@ -4,6 +4,16 @@ LaTeX
 .. contents:: **Daftar Isi**
 
 
+Manual
+---------------------------------------------------------------------------------
+
+- `Dokumentasi dari Overleaf`_
+- `Dokumentasi dari namsu.de`_
+
+.. _`Dokumentasi dari Overleaf`: https://www.overleaf.com/learn/latex/Main_Page
+.. _`Dokumentasi dari namsu.de`: https://www.namsu.de/
+
+
 Softwares/Packages/Tools
 ---------------------------------------------------------------------------------
 
@@ -78,7 +88,11 @@ My Templates
 Snippets
 ---------------------------------------------------------------------------------
 
-- `Snippets <snippets/README.rst>`_
-
+Catatan mengenai snippet bisa dibaca di `README snippet (rst) <snippets/README.rst>`_
+atau `README snippet (html) <snippets/README.html>`_. 
 
 .. _`Tex live vs Miktex`: https://www.texdev.net/2016/12/18/tex-on-windows-tex-live-versus-miktex-revisited/
+
+
+
+
