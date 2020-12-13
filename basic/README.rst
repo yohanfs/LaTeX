@@ -1,4 +1,4 @@
-LaTeX
+Basic LaTeX
 =================================================================================
 
 .. contents:: **Daftar Isi**
@@ -28,6 +28,8 @@ Softwares/Packages/Tools
 
 Command Line
 ---------------------------------------------------------------------------------
+
+Berikut ini adalah *command* untuk *compile*:
 
 - basic document
 
@@ -80,10 +82,15 @@ Contoh penggunaan:
 My Templates
 ---------------------------------------------------------------------------------
 
+Berikut ini adalah template latex sederhana untuk keperluan penulisan dokumen
+biasa. 
+
 - `yohan_template_article.tex <templates_ysi/yohan_template_article.tex>`_
 - `yohan_article.cls <templates_ysi/yohan_article.cls>`_
 
-.. image:: images/templatesederhana.png 
+.. image:: images/templateSederhana.png 
+
+.. Referensi
 
 .. _`Tex live vs Miktex`: https://www.texdev.net/2016/12/18/tex-on-windows-tex-live-versus-miktex-revisited/
 

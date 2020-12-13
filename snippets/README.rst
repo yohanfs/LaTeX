@@ -1,4 +1,4 @@
-Snippets
+Latex Snippets
 =================================================================================
 
 :Penulis: Yohan Sidik
@@ -410,3 +410,4 @@ Table
 
 .. image:: tables/main.png
 
+.. footer:: Yohan Sidik
