@@ -265,6 +265,23 @@ Untuk compile otomatis apabila ada perubahan pada isi folder.
 
 - `Hiding latex metafiles <https://texblog.org/2015/08/20/hiding-latex-metafiles-from-project-directory/>`_
 
+
+Makefile dan Docker
+*********************************************************************************
+
+Simple command:
+
+::
+
+	compile:
+		docker run --rm -v $(shell pwd):/workdir -w /workdir aergus/latex pdflatex -output-directory=build main.tex
+
+Pilihan image:
+
+- aergus/latex
+- tianon/latex
+
+
 Figures
 ---------------------------------------------------------------------------------
 
