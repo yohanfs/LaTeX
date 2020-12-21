@@ -13,35 +13,42 @@ User Guide
 
 https://docs.miktex.org/manual/
 
-
-
-
 Manual Install
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 Cara *install* Miktex ada di `Website Miktex`_. 
 
-*Update Packages* diinstall melalui Miktex Console dan disimpan di:
-
-::
-
-	/home/user/.miktex/texmfs/install
-
-**Cek Versi**
-
 ::
 
 	$ pdflatex --version
 
-
-Packages
+Update Package
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-*Pakcages* disimpan di:
+Update package dapat dilakukan melalui Miktex Console atau command line.
+
+**Via Command Line**
 
 ::
 
-	~/.miktex/texmfs/install/tex/latex
+	$ mpm --update 
+
+Install Package
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+**Via Command Line**
+
+::
+
+	$ mpm --install=<package name>
+
+
+Package (user mode) disimpan di
+
+::
+
+	/home/user/.miktex/texmfs/tex/install
+
 
 **Referensi**
 

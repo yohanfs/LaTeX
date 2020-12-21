@@ -360,6 +360,32 @@ graphicx        caption          subcaption
 
 .. image:: figures/twofigures/main.png
 
+
+SVG
+*********************************************************************************
+
+Gunakan package svg agar bisa menggunakan svg file di latex.
+
+::
+
+	\usepackage{svg}
+
+Package tersebut memerlukan Inkscape agar dapat berjalan. Selain itu perlu
+menambahkan *command* ``--shell-escape``. Contoh *command*-nya adalah:
+
+::
+
+	$ pdflatex -aux-directory=build --shell-escape main.tex
+
+Berikut ini contoh *syntax* untuk memasukkan gambar svg:
+
+::
+
+	\begin{figure}[!ht]
+	 \centering
+	 \includesvg{detail.svg}
+	\end{figure}
+
 Equation
 ---------------------------------------------------------------------------------
 
