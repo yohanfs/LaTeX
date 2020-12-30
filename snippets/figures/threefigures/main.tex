@@ -1,0 +1,28 @@
+\documentclass{article}
+\usepackage[showframe]{geometry}
+\usepackage{graphicx}
+\usepackage{subcaption} % subfigure
+
+\begin{document}
+    \begin{figure}
+        \centering
+        \begin{minipage}{0.3\linewidth}
+        \begin{subfigure}{\linewidth}
+        \includegraphics[width=\linewidth]{example-image-a}
+        \caption{Caption for A}
+        \end{subfigure}
+        \begin{subfigure}{\textwidth}
+        \includegraphics[width=\linewidth]{example-image-b}
+        \caption{Caption for B}
+        \end{subfigure}
+        \end{minipage}
+        \hfil
+        \begin{minipage}{0.65\linewidth}
+        \begin{subfigure}{\linewidth}
+        \includegraphics[width=\linewidth]{example-image-c}
+        \caption{Caption for C}
+        \end{subfigure}
+        \end{minipage}
+    \caption{The whole figure..}
+    \end{figure}
+\end{document}

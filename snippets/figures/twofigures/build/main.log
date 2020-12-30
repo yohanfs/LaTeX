@@ -1,22 +1,22 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.5)  6 NOV 2020 21:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.12) (preloaded format=pdflatex 2020.12.27)  31 DEC 2020 00:08
 entering extended mode
 **./main.tex
 (main.tex
 LaTeX2e <2020-10-01> patch level 2
-L3 programming layer <2020-10-27> xparse <2020-03-03>
+L3 programming layer <2020-12-07> xparse <2020-03-03>
 (/home/fajar/.miktex/texmfs/install/tex/latex/base/article.cls
 Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
 (/home/fajar/.miktex/texmfs/install/tex/latex/base/size10.clo
 File: size10.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
-\c@part=\count175
-\c@section=\count176
-\c@subsection=\count177
-\c@subsubsection=\count178
-\c@paragraph=\count179
-\c@subparagraph=\count180
-\c@figure=\count181
-\c@table=\count182
+\c@part=\count177
+\c@section=\count178
+\c@subsection=\count179
+\c@subsubsection=\count180
+\c@paragraph=\count181
+\c@subparagraph=\count182
+\c@figure=\count183
+\c@table=\count184
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
@@ -62,18 +62,18 @@ Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
 \caption@hangindent=\dimen147
 Package caption Info: Standard document class detected.
 )
-\c@caption@flags=\count183
-\c@continuedfloat=\count184
+\c@caption@flags=\count185
+\c@continuedfloat=\count186
 )
-\c@subfigure=\count185
-\c@subtable=\count186
+\c@subfigure=\count187
+\c@subtable=\count188
 )
 (/home/fajar/.miktex/texmfs/install/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count187
+\l__kernel_color_stack_int=\count189
 \l__pdf_internal_box=\box47
 )
-(/mnt/lan/gitRepo/LaTeX/snippets/figures/twofigures/build/main.aux)
+(/mnt/bell/gitRepo/yohanfs/LaTeX/snippets/figures/twofigures/build/main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
@@ -93,16 +93,16 @@ LaTeX Font Info:    ... okay on input line 6.
 
 (/home/fajar/.miktex/texmfs/install/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count188
+\scratchcounter=\count190
 \scratchdimen=\dimen148
 \scratchbox=\box48
-\nofMPsegments=\count189
-\nofMParguments=\count190
+\nofMPsegments=\count191
+\nofMParguments=\count192
 \everyMPshowfont=\toks16
-\MPscratchCnt=\count191
+\MPscratchCnt=\count193
 \MPscratchDim=\dimen149
-\MPnumerator=\count192
-\makeMPintoPDFobject=\count193
+\MPnumerator=\count194
+\makeMPintoPDFobject=\count195
 \everyMPtoPDFconversion=\toks17
 ) (/home/fajar/.miktex/texmfs/install/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -114,30 +114,30 @@ Package caption Info: End \AtBeginDocument code.
 <example-image-a.pdf, id=1, 321.2pt x 240.9pt>
 File: example-image-a.pdf Graphic file (type pdf)
 <use example-image-a.pdf>
-Package pdftex.def Info: example-image-a.pdf  used on input line 12.
-(pdftex.def)             Requested size: 34.49947pt x 25.87418pt.
+Package pdftex.def Info: example-image-a.pdf  used on input line 11.
+(pdftex.def)             Requested size: 124.19725pt x 93.1456pt.
 File: example-image-a.pdf Graphic file (type pdf)
 <use example-image-a.pdf>
-Package pdftex.def Info: example-image-a.pdf  used on input line 17.
-(pdftex.def)             Requested size: 34.49947pt x 25.87418pt.
+Package pdftex.def Info: example-image-a.pdf  used on input line 15.
+(pdftex.def)             Requested size: 124.19725pt x 93.1456pt.
 [1
 
 {/home/fajar/.miktex/texmfs/data/pdftex/config/pdftex.map} </home/fajar/.miktex
 /texmfs/install/tex/latex/mwe/example-image-a.pdf>]
-(/mnt/lan/gitRepo/LaTeX/snippets/figures/twofigures/build/main.aux) ) 
+(/mnt/bell/gitRepo/yohanfs/LaTeX/snippets/figures/twofigures/build/main.aux) ) 
 Here is how much of TeX's memory you used:
- 2483 strings out of 479800
- 43305 string characters out of 2874509
- 312790 words of memory out of 3000000
- 19513 multiletter control sequences out of 15000+200000
- 535387 words of font info for 30 fonts, out of 3000000 for 9000
+ 2483 strings out of 479697
+ 43377 string characters out of 2871900
+ 314452 words of memory out of 3000000
+ 19616 multiletter control sequences out of 15000+200000
+ 403729 words of font info for 28 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,7n,74p,300b,453s stack positions out of 5000i,500n,10000p,200000b,50000s
-</home/faj
-ar/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></home/fajar
-/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr9.pfb></home/fajar/.m
-iktex/texmfs/install/fonts/type1/public/lm/lmss17.pfb>
-Output written on main.pdf (1 page, 37930 bytes).
+ 66i,7n,74p,300b,445s stack positions out of 5000i,500n,10000p,200000b,50000s
+<
+/home/fajar/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></h
+ome/fajar/.miktex/texmfs/install/fonts/type1/public/amsfonts/cm/cmr9.pfb></home
+/fajar/.miktex/texmfs/install/fonts/type1/public/lm/lmss17.pfb>
+Output written on main.pdf (1 page, 37932 bytes).
 PDF statistics:
  22 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
