@@ -102,6 +102,33 @@ cite                 glossaries
 	\printglossaries  
 	\end{document}
 
+Layout
+---------------------------------------------------------------------------------
+
+**Contoh**
+
+::
+
+    \documentclass[a4paper,12pt,oneside]{article}
+
+    \usepackage{showframe}
+    \usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm,footskip=0.5cm]{geometry}
+    \usepackage{blindtext}
+
+    \begin{document}
+
+    \title{Contoh}
+    \maketitle
+
+    \blindtext
+
+    \end{document}
+
+**Referensi**
+
+- `Wiki - Latex Page Layout <https://en.wikibooks.org/wiki/LaTeX/Page_Layout>`_
+- `Tips on writing a thesis in latex <http://www.khirevich.com/latex/page_layout/>`_
+
 Makefile
 ---------------------------------------------------------------------------------
 
