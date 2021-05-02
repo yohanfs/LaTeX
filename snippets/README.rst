@@ -308,6 +308,26 @@ Pilihan image:
 - aergus/latex
 - tianon/latex
 
+Bash Function
+*********************************************************************************
+
+Secara default, sebuah file tex dapat dicompile dengan cara:
+
+::
+
+    $ pdflatex main.tex
+
+Berikut ini adalah custom command (bash) yang disimpan di **bashrc**.
+
+::
+
+    function ysitex(){
+        while true; do\
+            inotifywait -qre close_write $1;\
+            pdflatex -aux-directory=build main.tex;\
+        done
+    }
+
 
 Figures
 ---------------------------------------------------------------------------------
