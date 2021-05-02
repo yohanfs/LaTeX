@@ -309,7 +309,7 @@ Pilihan image:
 - tianon/latex
 
 Bash Function
-*********************************************************************************
+---------------------------------------------------------------------------------
 
 Secara default, sebuah file tex dapat dicompile dengan cara:
 
