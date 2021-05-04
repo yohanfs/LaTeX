@@ -116,23 +116,27 @@ Jalankanlah *command* berikut ini terlebih dahulu:
 
 Kemudian jalankan lagi *command* untuk *compile*.
 
-**Referens**
+**Referensi**
 
 - `Dockerized Miktex`_
 - `Docker docs: use volumes`_
 
+Issue
+-------
 
+- Key Expired
 
+  Error saat melakukan **sudo apt-get update** perihal *key expired*.
 
+  Key-nya expire dan harus diperbaharui. Biasanya ini akan menjadi issue di
+  repo miktex di github.com/miktex. Pantaulah repo miktex untuk mendapatkan
+  update key terbaru dari maintainer.
 
+  Contoh *command* untuk memperbaharui adalah:
 
-
-
-
-
-
-
-
+  ::
+  
+     sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D6BC243565B2087BC3F897C9277A7293F59E4889
 
 .. Referensi
 
