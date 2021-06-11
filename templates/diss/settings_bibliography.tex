@@ -1,0 +1,20 @@
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+
+\usepackage[
+    backend=biber,
+    style=alphabetic,
+    citestyle=authoryear-comp
+]{biblatex}
+
+\addbibresource{bibtex/references.bib}
+
+\renewcommand{\bibfont}{\footnotesize}
+
+\AtEveryBibitem{%
+  \clearfield{note}%
+}
+
+\preto\fullcite{\AtNextCite{\defcounter{maxnames}{99}}}
+
+
