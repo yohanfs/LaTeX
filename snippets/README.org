@@ -1,0 +1,713 @@
+#+STARTUP: overview
+
+* Latex Snippets
+  :PROPERTIES:
+  :CUSTOM_ID: latex-snippets
+  :END:
+
+- Penulis :: Yohan Sidik
+
+*Daftar Isi*
+
+** Basic Document Templates
+   :PROPERTIES:
+   :CUSTOM_ID: basic-document-templates
+   :END:
+
+*** Basic document
+    :PROPERTIES:
+    :CUSTOM_ID: basic-document
+    :END:
+
+#+BEGIN_EXAMPLE
+    \documentclass{article}
+    \begin{document}
+      Hello World!
+    \end{document}
+#+END_EXAMPLE
+
+*** Basic document with bibtex
+    :PROPERTIES:
+    :CUSTOM_ID: basic-document-with-bibtex
+    :END:
+
+*Paket*
+
+cite
+
+*Contoh*
+
+#+BEGIN_EXAMPLE
+    \documentclass[11pt]{article}
+    \usepackage{cite}
+
+    \begin{document}
+
+    \title{My Article}
+    \author{Nobody Jr.}
+    \date{Today}
+    \maketitle
+
+    Blablabla said Nobody ~\cite{Nobody06}.
+
+    \bibliography{mybib}{}
+    \bibliographystyle{plain}
+    \end{document}
+#+END_EXAMPLE
+
+*** Basic document with glossaries
+    :PROPERTIES:
+    :CUSTOM_ID: basic-document-with-glossaries
+    :END:
+
+*Paket*
+
+glossaries
+
+*Contoh* :
+
+#+BEGIN_EXAMPLE
+    \documentclass{article}  
+    \usepackage{glossaries}  
+    \makeglossaries  
+    \newglossaryentry{sample}{name={sample},description={an example}}  
+    \begin{document}  
+    \gls{sample}, \gls[format=textbf]{sample}.  
+    \printglossaries  
+    \end{document}
+#+END_EXAMPLE
+
+*** Basic document with bibtex and glossaries
+    :PROPERTIES:
+    :CUSTOM_ID: basic-document-with-bibtex-and-glossaries
+    :END:
+
+*Paket*
+
+| cite                                              | glossaries                                                                                        |
+|---------------------------------------------------+---------------------------------------------------------------------------------------------------|
+| *Contoh*                                          |                                                                                                   |
+|                                                   |                                                                                                   |
+| :                                                 |                                                                                                   |
+| #+BEGIN_QUOTE                                     | 1pt]{article}                                                                                     |
+|   documentclass[1                                 |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | }                                                                                                 |
+|   usepackage{cite                                 |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | saries}                                                                                           |
+|   usepackage{glos makeglossaries                  |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | y{sample}{name={sample},description={an example}}                                                 |
+|   newglossaryentr                                 |                                                                                                   |
+|                                                   |                                                                                                   |
+|   begin{document}                                 |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | e}                                                                                                |
+|   title{My Articl                                 |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | r.}                                                                                               |
+|   author{Nobody J date{Today} maketitle           |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | obody ~cite{Nobody06}.                                                                            |
+|   Blablabla said N                                |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | ls[format=textbf]{sample}.                                                                        |
+|   gls{sample}, g                                  |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | bib}{}                                                                                            |
+|   bibliography{my                                 |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | le{plain}                                                                                         |
+|   bibliographysty printglossaries end{document}   |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+|                                                   |                                                                                                   |
+| Layout                                            |                                                                                                   |
+| --------------                                    | --------------                                                                                    |
+|                                                   |                                                                                                   |
+| *Contoh*                                          |                                                                                                   |
+|                                                   |                                                                                                   |
+| :                                                 |                                                                                                   |
+| #+BEGIN_QUOTE                                     | 4paper,12pt,oneside]{article}                                                                     |
+|   documentclass[a                                 |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | frame}                                                                                            |
+|   usepackage{show                                 |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | =2cm,right=2cm,top=2cm,bottom=2cm,footskip=0.5cm]{geometry}                                       |
+|   usepackage[left                                 |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | dtext}                                                                                            |
+|   usepackage{blin                                 |                                                                                                   |
+|                                                   |                                                                                                   |
+|   begin{document}                                 |                                                                                                   |
+|                                                   |                                                                                                   |
+|   title{Contoh} maketitle                         |                                                                                                   |
+|                                                   |                                                                                                   |
+|   blindtext                                       |                                                                                                   |
+|                                                   |                                                                                                   |
+|   end{document}                                   |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+|                                                   |                                                                                                   |
+| *Referensi*                                       |                                                                                                   |
+| - `Wiki - Latex Page                              | #+BEGIN_QUOTE                                                                                     |
+|                                                   |   Layout <[[https://en.wikibooks.org/wiki/LaTeX/Page_Layout]]>`_                                  |
+|                                                   | #+END_QUOTE                                                                                       |
+| - `Tips on writing a                              | #+BEGIN_QUOTE                                                                                     |
+|                                                   |   thesis in latex <[[http://www.khirevich.com/latex/page_layout/]]>`_                             |
+| Makefile                                          | #+END_QUOTE                                                                                       |
+| --------------                                    | --------------                                                                                    |
+|                                                   |                                                                                                   |
+| Standard Script                                   |                                                                                                   |
+| --------------                                    | --------------                                                                                    |
+| Makefile berikut dap                              | at meng-compile tex file yang berisi bibtex dan glossaries.                                       |
+|                                                   |                                                                                                   |
+| :                                                 |                                                                                                   |
+| #+BEGIN_QUOTE                                     | build1 build2 build3 bib gls                                                                      |
+|   .PHONY: all                                     |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | bib gls build2 build3                                                                             |
+|   all: build1                                     |                                                                                                   |
+|                                                   |                                                                                                   |
+|   build1:                                         |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | #+BEGIN_QUOTE                                                                                     |
+|   pdflatex                                        |   main                                                                                            |
+| #+END_QUOTE                                       | #+END_QUOTE                                                                                       |
+|                                                   |                                                                                                   |
+| #+BEGIN_QUOTE                                     |                                                                                                   |
+|   build2:                                         |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | #+BEGIN_QUOTE                                                                                     |
+|   pdflatex                                        |   main                                                                                            |
+| #+END_QUOTE                                       | #+END_QUOTE                                                                                       |
+|                                                   |                                                                                                   |
+| #+BEGIN_QUOTE                                     |                                                                                                   |
+|   build3:                                         |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | #+BEGIN_QUOTE                                                                                     |
+|   pdflatex                                        |   main                                                                                            |
+| #+END_QUOTE                                       | #+END_QUOTE                                                                                       |
+|                                                   |                                                                                                   |
+| #+BEGIN_QUOTE                                     |                                                                                                   |
+|   bib:                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | ain                                                                                               |
+|   bibtex m                                        |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+|                                                   |                                                                                                   |
+| #+BEGIN_QUOTE                                     |                                                                                                   |
+|   gls:                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | saries main                                                                                       |
+|   makeglos                                        |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| Script dengan tambah                              | an fitur untuk menyimpan auxiliary files di folder build                                          |
+| --------------                                    | --------------                                                                                    |
+|                                                   |                                                                                                   |
+| :                                                 |                                                                                                   |
+| #+BEGIN_QUOTE                                     | build1 build2 build3 bib gls                                                                      |
+|   .PHONY: all                                     |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | bib gls build2 build3                                                                             |
+|   all: build1                                     |                                                                                                   |
+|                                                   |                                                                                                   |
+|   build1:                                         |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | #+BEGIN_QUOTE                                                                                     |
+|   pdflatex                                        |   -output-directory=build -interaction=batchmode main                                             |
+| #+END_QUOTE                                       | #+END_QUOTE                                                                                       |
+|                                                   |                                                                                                   |
+| #+BEGIN_QUOTE                                     |                                                                                                   |
+|   build2:                                         |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | #+BEGIN_QUOTE                                                                                     |
+|   pdflatex                                        |   -output-directory=build -interaction=batchmode main                                             |
+| #+END_QUOTE                                       | #+END_QUOTE                                                                                       |
+|                                                   |                                                                                                   |
+| #+BEGIN_QUOTE                                     |                                                                                                   |
+|   build3:                                         |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | #+BEGIN_QUOTE                                                                                     |
+|   pdflatex                                        |   -output-directory=build -interaction=batchmode main                                             |
+| #+END_QUOTE                                       | #+END_QUOTE                                                                                       |
+|                                                   |                                                                                                   |
+| #+BEGIN_QUOTE                                     |                                                                                                   |
+|   bib:                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | input-directory=build --output-directory=build main                                               |
+|   biber --                                        |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+|                                                   |                                                                                                   |
+| #+BEGIN_QUOTE                                     |                                                                                                   |
+|   gls:                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | saries -d build main                                                                              |
+|   makeglos                                        |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| Alternatif Penulisan                              | #+BEGIN_QUOTE                                                                                     |
+|                                                   |   Makefile Versi 1                                                                                |
+|                                                   | #+END_QUOTE                                                                                       |
+| --------------                                    | --------------                                                                                    |
+| Pada contoh di atas,                              | #+BEGIN_QUOTE                                                                                     |
+|                                                   |   setiap line command ditulis dalam rule yang terpisah. Semua                                     |
+|                                                   | #+END_QUOTE                                                                                       |
+| line tersebut sebena                              | rnya dapat ditulis dalam rule yang sama. Contohnya adalah:                                        |
+|                                                   |                                                                                                   |
+| #+BEGIN_EXAMPLE                                   |                                                                                                   |
+|     .PHONY: all                                   |                                                                                                   |
+|                                                   |                                                                                                   |
+|     all:                                          |                                                                                                   |
+| #+END_EXAMPLE                                     |                                                                                                   |
+| #+BEGIN_QUOTE                                     | #+BEGIN_QUOTE                                                                                     |
+|   pdflatex                                        |   -output-directory=build -interaction=batchmode main                                             |
+| #+END_QUOTE                                       | #+END_QUOTE                                                                                       |
+| #+BEGIN_QUOTE                                     | input-directory=build --output-directory=build main                                               |
+|   biber --                                        |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | saries -d build main                                                                              |
+|   makeglos                                        |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | #+BEGIN_QUOTE                                                                                     |
+|   pdflatex                                        |   -output-directory=build -interaction=batchmode main                                             |
+| #+END_QUOTE                                       | #+END_QUOTE                                                                                       |
+| #+BEGIN_QUOTE                                     | #+BEGIN_QUOTE                                                                                     |
+|   pdflatex                                        |   -output-directory=build -interaction=batchmode main                                             |
+| #+END_QUOTE                                       | #+END_QUOTE                                                                                       |
+| Alternatif Penulisan                              | #+BEGIN_QUOTE                                                                                     |
+|                                                   |   Makefile Versi 2                                                                                |
+|                                                   | #+END_QUOTE                                                                                       |
+| --------------                                    | --------------                                                                                    |
+| Agar dapat digunakan                              | #+BEGIN_QUOTE                                                                                     |
+|                                                   |   secara general, maka nama file yang berulang diganti dengan                                     |
+|                                                   | #+END_QUOTE                                                                                       |
+| variabel untuk memud                              | ahkan dalam mengganti nama file tersebut.                                                         |
+|                                                   |                                                                                                   |
+| :                                                 |                                                                                                   |
+| #+BEGIN_QUOTE                                     | te all                                                                                            |
+|   .PHONY: upda                                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | #+BEGIN_QUOTE                                                                                     |
+|   auxFolder :=                                    |   build                                                                                           |
+| #+END_QUOTE                                       | #+END_QUOTE                                                                                       |
+| #+BEGIN_QUOTE                                     | #+BEGIN_QUOTE                                                                                     |
+|   mode :=                                         |   batchmode                                                                                       |
+| #+END_QUOTE                                       | #+END_QUOTE                                                                                       |
+| #+BEGIN_QUOTE                                     | #+BEGIN_QUOTE                                                                                     |
+|   filename :=                                     |   main                                                                                            |
+|                                                   | #+END_QUOTE                                                                                       |
+|   update:                                         |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | o "simple update"                                                                                 |
+|   @ech                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | o "-------------"                                                                                 |
+|   @ech                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | atex -output-directory=$(auxFolder) -interaction=$(mode) $(filename)                              |
+|   pdfl                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+|                                                   |                                                                                                   |
+| #+BEGIN_QUOTE                                     |                                                                                                   |
+|   all:                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | o "run pdflatex (1)"                                                                              |
+|   @ech                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | o "----------------"                                                                              |
+|   @ech                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | atex -output-directory=$(auxFolder) -interaction=$(mode) $(filename)                              |
+|   pdfl                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | o "run biber"                                                                                     |
+|   @ech                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | o "---------"                                                                                     |
+|   @ech                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | r --input-directory=$(auxFolder) --output-directory=$(auxFolder) $(filename)                      |
+|   bibe                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | o "run glossaries"                                                                                |
+|   @ech                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | o "--------------"                                                                                |
+|   @ech                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | glossaries -d $(auxFolder) $(filename)                                                            |
+|   make                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | o "run pdflatex (2)"                                                                              |
+|   @ech                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | o "----------------"                                                                              |
+|   @ech                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | atex -output-directory=$(auxFolder) -interaction=$(mode) $(filename)                              |
+|   pdfl                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | o "run pdflatex (3)"                                                                              |
+|   @ech                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | o "----------------"                                                                              |
+|   @ech                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | atex -output-directory=$(auxFolder) -interaction=$(mode) $(filename)                              |
+|   pdfl                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+|                                                   |                                                                                                   |
+| Otomatis Compile                                  |                                                                                                   |
+| --------------                                    | --------------                                                                                    |
+| Untuk compile otomat                              | is apabila ada perubahan pada isi folder.                                                         |
+|                                                   |                                                                                                   |
+| :                                                 |                                                                                                   |
+| #+BEGIN_QUOTE                                     | mpiling tex by Yohan Sidik                                                                        |
+|   #Makefile for co #Change-log                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | anize the script                                                                                  |
+|   #23-10-2020: org                                |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | y aux files stored in the build folder; main.pdf is in the root folder                            |
+|   #24-10-2020: onl                                |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | ll watch                                                                                          |
+|   .PHONY: update a                                |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | ld                                                                                                |
+|   auxFolder := bui                                |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | stopmode                                                                                          |
+|   mode := non                                     |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | n                                                                                                 |
+|   filename := mai                                 |                                                                                                   |
+|                                                   |                                                                                                   |
+|   #mode options # 1. batchmode # 2. nonstopmode   |                                                                                                   |
+|                                                   |                                                                                                   |
+|   watch:                                          |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | do                                                                                                |
+|   while true;                                     |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | ait -qre close_write contents;                                                                    |
+|   inotifyw                                        |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | ate;                                                                                              |
+|   make upd                                        |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+|                                                   |                                                                                                   |
+| #+BEGIN_QUOTE                                     |                                                                                                   |
+|   done                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+|                                                   |                                                                                                   |
+| #+BEGIN_QUOTE                                     |                                                                                                   |
+|   update:                                         |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | e update"                                                                                         |
+|   @echo "simpl                                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | --------"                                                                                         |
+|   @echo "-----                                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | x-directory=$(auxFolder) -interaction=$(mode) $(filename)                                         |
+|   pdflatex -au                                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+|                                                   |                                                                                                   |
+| #+BEGIN_QUOTE                                     |                                                                                                   |
+|   all:                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | dflatex (1)"                                                                                      |
+|   @echo "run p                                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | -----------"                                                                                      |
+|   @echo "-----                                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | x-directory=$(auxFolder) -interaction=$(mode) $(filename)                                         |
+|   pdflatex -au                                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | iber"                                                                                             |
+|   @echo "run b                                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | ----"                                                                                             |
+|   @echo "-----                                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | t-directory=$(auxFolder) --output-directory=$(auxFolder) $(filename)                              |
+|   biber --inpu                                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | lossaries"                                                                                        |
+|   @echo "run g                                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | ---------"                                                                                        |
+|   @echo "-----                                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | es -d $(auxFolder) $(filename)                                                                    |
+|   makeglossari                                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | dflatex (2)"                                                                                      |
+|   @echo "run p                                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | -----------"                                                                                      |
+|   @echo "-----                                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | x-directory=$(auxFolder) -interaction=$(mode) $(filename)                                         |
+|   pdflatex -au                                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | dflatex (3)"                                                                                      |
+|   @echo "run p                                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | -----------"                                                                                      |
+|   @echo "-----                                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | x-directory=$(auxFolder) -interaction=$(mode) $(filename)                                         |
+|   pdflatex -au                                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+|                                                   |                                                                                                   |
+| *Referensi*                                       |                                                                                                   |
+| - `Hiding latex meta                              | files <[[https://texblog.org/2015/08/20/hiding-latex-metafiles-from-project-directory/]]>`_       |
+|                                                   |                                                                                                   |
+| Makefile dan Docker                               |                                                                                                   |
+| --------------                                    | --------------                                                                                    |
+|                                                   |                                                                                                   |
+| Simple command:                                   |                                                                                                   |
+|                                                   |                                                                                                   |
+| #+BEGIN_EXAMPLE                                   |                                                                                                   |
+|     compile:                                      |                                                                                                   |
+| #+END_EXAMPLE                                     |                                                                                                   |
+| #+BEGIN_QUOTE                                     | -rm -v $(shell pwd):/workdir -w /workdir aergus/latex pdflatex -output-directory=build main.tex   |
+|   docker run -                                    |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+|                                                   |                                                                                                   |
+| Pilihan image:                                    |                                                                                                   |
+|                                                   |                                                                                                   |
+| - aergus/latex                                    |                                                                                                   |
+| - tianon/latex                                    |                                                                                                   |
+|                                                   |                                                                                                   |
+| Bash Function                                     |                                                                                                   |
+| --------------                                    | --------------                                                                                    |
+| Secara default, sebu                              | ah file tex dapat dicompile dengan cara:                                                          |
+|                                                   |                                                                                                   |
+| :                                                 |                                                                                                   |
+| #+BEGIN_QUOTE                                     | tex                                                                                               |
+|   $ pdflatex main.                                |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| Berikut ini adalah c                              | ustom command (bash) yang disimpan di *bashrc*.                                                   |
+|                                                   |                                                                                                   |
+| :                                                 |                                                                                                   |
+| #+BEGIN_QUOTE                                     | ){                                                                                                |
+|   function ysitex(                                |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | do                                                                                                |
+|   while true;                                     |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | ait -qre close_write $1;                                                                          |
+|   inotifyw                                        |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | #+BEGIN_QUOTE                                                                                     |
+|   pdflatex                                        |   -aux-directory=build main.tex;                                                                  |
+| #+END_QUOTE                                       | #+END_QUOTE                                                                                       |
+|                                                   |                                                                                                   |
+| #+BEGIN_QUOTE                                     |                                                                                                   |
+|   done                                            |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+|                                                   |                                                                                                   |
+| #+BEGIN_QUOTE                                     |                                                                                                   |
+|   }                                               |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+|                                                   |                                                                                                   |
+| Figures                                           |                                                                                                   |
+| --------------                                    | --------------                                                                                    |
+|                                                   |                                                                                                   |
+| Graphicspath                                      |                                                                                                   |
+| --------------                                    | --------------                                                                                    |
+|                                                   |                                                                                                   |
+| :                                                 |                                                                                                   |
+| #+BEGIN_QUOTE                                     | ubdir1/}{subdir2/}{subdir3/}...{subdirn/}}                                                        |
+|   graphicspath{{s                                 |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+|                                                   |                                                                                                   |
+| 1 Figure                                          |                                                                                                   |
+| --------------                                    | --------------                                                                                    |
+|                                                   |                                                                                                   |
+| *Paket*                                           |                                                                                                   |
+|                                                   |                                                                                                   |
+| graphics                                          |                                                                                                   |
+|                                                   |                                                                                                   |
+| *Contoh*                                          |                                                                                                   |
+|                                                   |                                                                                                   |
+| :                                                 |                                                                                                   |
+| #+BEGIN_QUOTE                                     | rticle}                                                                                           |
+|   documentclass{a                                 |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | hicx}                                                                                             |
+|   usepackage{grap                                 |                                                                                                   |
+|                                                   |                                                                                                   |
+|   begin{document}                                 |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | hb]                                                                                               |
+|   - begin{figure}[! :: centering                  |                                                                                                   |
+|                                                   |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | hics[width=3cm]{example-image-a}                                                                  |
+|   includegrap                                     |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | toh gambar}                                                                                       |
+|   caption{Con                                     |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | ain}                                                                                              |
+|   label{fig:m                                     |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+|                                                   |                                                                                                   |
+| #+BEGIN_QUOTE                                     |                                                                                                   |
+|   end{figure}                                     |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+| #+BEGIN_QUOTE                                     | tunjukkan pada Gbr.~ref{fig:main}.                                                                |
+|   Contoh gambar di                                |                                                                                                   |
+|                                                   |                                                                                                   |
+|   end{document}                                   |                                                                                                   |
+| #+END_QUOTE                                       |                                                                                                   |
+|                                                   |                                                                                                   |
+| *Hasil compile*                                   |                                                                                                   |
+| [[file:figures/o]]                                | nefigure/main.png                                                                                 |
+|                                                   |                                                                                                   |
+| 2 Figures                                         |                                                                                                   |
+| --------------                                    | --------------                                                                                    |
+|                                                   |                                                                                                   |
+| *Paket*                                           |                                                                                                   |
+| ============== =====                              | =========== ==================                                                                    |
+| graphicx capt                                     | ion subcaption                                                                                    |
+
+*Contoh*
+
+#+BEGIN_EXAMPLE
+    \documentclass{article}
+    \usepackage{graphicx}
+    \usepackage{subcaption}
+    \usepackage{caption}
+
+    \begin{document}
+
+    \begin{figure}[!ht]
+        \centering
+        \begin{subfigure}[t]{.4\linewidth}
+            \centering
+            \includegraphics[width=0.25\textwidth]{example-image-a}
+            \caption{Gambar No. 1}\label{fig:a}
+        \end{subfigure}
+        \begin{subfigure}[t]{.4\linewidth}
+            \centering
+            \includegraphics[width=0.25\textwidth]{example-image-a}
+            \caption{Gambar No. 2}\label{fig:b}
+        \end{subfigure}
+    \caption{2 buah gambar}\label{fig:contoh}
+    \end{figure}
+
+    Ini merujuk ke Gbr.~\ref{fig:a}. Ini merujuk Gbr.~\ref{fig:b}. Ini merujuk ke
+    Gbr.~\ref{fig:contoh}.
+
+    \end{document}
+#+END_EXAMPLE
+
+*Hasil compile*
+
+[[file:figures/twofigures/main.png]]
+
+*** SVG
+    :PROPERTIES:
+    :CUSTOM_ID: svg
+    :END:
+
+Gunakan package svg agar bisa menggunakan svg file di latex.
+
+#+BEGIN_EXAMPLE
+    \usepackage{svg}
+#+END_EXAMPLE
+
+Package tersebut memerlukan Inkscape agar dapat berjalan. Selain itu
+perlu menambahkan /command/ =--shell-escape=. Contoh /command/-nya
+adalah:
+
+#+BEGIN_EXAMPLE
+    $ pdflatex -aux-directory=build --shell-escape main.tex
+#+END_EXAMPLE
+
+Berikut ini contoh /syntax/ untuk memasukkan gambar svg:
+
+#+BEGIN_EXAMPLE
+    \begin{figure}[!ht]
+     \centering
+     \includesvg{detail.svg}
+    \end{figure}
+#+END_EXAMPLE
+
+** Equation
+   :PROPERTIES:
+   :CUSTOM_ID: equation
+   :END:
+
+*Contoh*
+
+#+BEGIN_EXAMPLE
+    \documentclass{article}
+
+    \begin{document}
+
+    \begin{equation}
+       \label{eq:contoh}
+       y=x^2
+    \end{equation}
+
+    Merujuk ke persamaan \ref{eq:contoh}. 
+
+    \end{document}
+#+END_EXAMPLE
+
+*Hasil compile*
+
+[[file:equations/main.png]]
+
+** Table
+   :PROPERTIES:
+   :CUSTOM_ID: table
+   :END:
+
+*Paket*
+
+| #+BEGIN_QUOTE   | #+BEGIN_QUOTE   |
+|   booktabs      |   siunitx       |
+| #+END_QUOTE     | #+END_QUOTE     |
+
+*Contoh*
+
+#+BEGIN_EXAMPLE
+    \documentclass{article}
+    \usepackage[utf8]{inputenc}
+    \usepackage{booktabs}
+    \usepackage{siunitx}
+
+    \begin{document}
+
+    \begin{table}[!h]
+        \caption{Generator parameters}
+        \label{tab:genparameters}
+        \centering
+        \begin{tabular}{ll}
+            \toprule
+            Parameters & Values \\
+            \midrule
+            Mechanical power $P_{\mathrm{M}}$ & \SI{3}{\mega\watt} \\
+            Mechanical torque $T_{\mathrm{m}}$ & \SI{71.62}{\kilo\newton\meter} \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \end{document}
+#+END_EXAMPLE
+
+*Hasil compile*
+
+[[file:tables/main.png]]
+
+Yohan Sidik
+
+

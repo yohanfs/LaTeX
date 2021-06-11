@@ -1,0 +1,308 @@
+#+STARTUP: overview
+#+TITLE: Latex
+#+AUTHOR: Yohan Sidik
+
+* Basic
+** Manual
+
+ - [[https://www.overleaf.com/learn/latex/Main_Page][Dokumentasi dari Overleaf]]
+ - [[https://www.namsu.de/][Dokumentasi dari namsu.de]]
+
+** Softwares/Packages/Tools
+
+ - Tex distribution
+   - [[https://miktex.org/][Miktex]]
+   - [[https://tug.org/texlive/][Tex live]]
+   - [[https://www.texdev.net/2016/12/18/tex-on-windows-tex-live-versus-miktex-revisited/][Tex live vs Miktex]]
+ - Editor
+   - [[https://www.texstudio.org/][Texstudio]]
+ - [[http://www.bibtex.org/][Bibtex]]
+ - [[https://ctan.mc1.root.project-creative.net/macros/latex/contrib/glossaries/glossaries-user.html][Glossaries]]
+
+** Command Line
+
+ Berikut ini adalah /command/ untuk /compile/:
+
+ - basic document
+
+ :    $ pdflatex filename
+
+ - include bibtex
+
+ :    $ pdflatex filename
+ :    $ bibtex filename
+ :    $ pdflatex filename
+ :    $ pdflatex filename
+
+ - include glossaries
+
+ :    $ pdflatex filename
+ :    $ makeglossaries filename
+ :    $ pdflatex filename
+ :    $ pdflatex filename
+
+ *Catatan*
+
+ Pdflatex memiliki 4 /interaction modes/. Mode tersebut adalah untuk
+ menampilkan proses compiling di terminal.
+
+ - batchmode: tidak ada yang ditampilkan
+ - nonstopmode: diagnostic message akan ditampilkan, tapi tidak ada
+   interaksi dengan user seperti batchmode
+ - scrollmode: akan berhenti pada /missing files/ atau jika keyboard input dibutuhkan
+ - errorstopmode: akan berhenti pada setiap error dan menunggu intervensi dari user
+
+ Contoh penggunaan:
+
+ :    $ pdflatex -interaction=batchmode filename
+
+ *Referensi*
+
+ - [[https://tex.stackexchange.com/questions/91592/where-to-find-official-and-extended-documentation-for-tex-latexs-commandlin][interaction modes]]
+
+** My Templates
+
+ Berikut ini adalah template latex sederhana untuk keperluan penulisan
+ dokumen biasa.
+
+ - [[file:templates_ysi/yohan_template_article.tex][yohan_template_article.tex]]
+ - [[file:templates_ysi/yohan_article.cls][yohan_article.cls]]
+
+ [[file:images/templateSederhana.png]]
+* Snippets
+** Basic Document Templates
+*** Basic document
+
+:    \documentclass{article}
+:    \begin{document}
+:      Hello World!
+:    \end{document}
+
+*** Basic document with bibtex
+
+*Paket*
+
+cite
+
+*Contoh*
+
+#+BEGIN_EXAMPLE
+    \documentclass[11pt]{article}
+    \usepackage{cite}
+
+    \begin{document}
+
+    \title{My Article}
+    \author{Nobody Jr.}
+    \date{Today}
+    \maketitle
+
+    Blablabla said Nobody ~\cite{Nobody06}.
+
+    \bibliography{mybib}{}
+    \bibliographystyle{plain}
+    \end{document}
+#+END_EXAMPLE
+
+*** Basic document with glossaries
+
+*Paket*
+
+glossaries
+
+*Contoh* :
+
+#+BEGIN_EXAMPLE
+    \documentclass{article}  
+    \usepackage{glossaries}  
+    \makeglossaries  
+    \newglossaryentry{sample}{name={sample},description={an example}}  
+    \begin{document}  
+    \gls{sample}, \gls[format=textbf]{sample}.  
+    \printglossaries  
+    \end{document}
+#+END_EXAMPLE
+
+*** SVG
+
+Gunakan package svg agar bisa menggunakan svg file di latex.
+
+:    \usepackage{svg}
+
+Package tersebut memerlukan Inkscape agar dapat berjalan. Selain itu
+perlu menambahkan /command/ =--shell-escape=. Contoh /command/-nya
+adalah:
+
+:    $ pdflatex -aux-directory=build --shell-escape main.tex
+
+Berikut ini contoh /syntax/ untuk memasukkan gambar svg:
+
+:    \begin{figure}[!ht]
+:     \centering
+:     \includesvg{detail.svg}
+:    \end{figure}
+
+** Equation
+
+*Contoh*
+
+#+BEGIN_EXAMPLE
+    \documentclass{article}
+
+    \begin{document}
+
+    \begin{equation}
+       \label{eq:contoh}
+       y=x^2
+    \end{equation}
+
+    Merujuk ke persamaan \ref{eq:contoh}. 
+
+    \end{document}
+#+END_EXAMPLE
+
+*Hasil compile*
+
+[[file:equations/main.png]]
+
+** Table
+
+*Paket*
+
+- booktabs
+- siunitx       
+
+*Contoh*
+
+#+BEGIN_EXAMPLE
+    \documentclass{article}
+    \usepackage[utf8]{inputenc}
+    \usepackage{booktabs}
+    \usepackage{siunitx}
+
+    \begin{document}
+
+    \begin{table}[!h]
+        \caption{Generator parameters}
+        \label{tab:genparameters}
+        \centering
+        \begin{tabular}{ll}
+            \toprule
+            Parameters & Values \\
+            \midrule
+            Mechanical power $P_{\mathrm{M}}$ & \SI{3}{\mega\watt} \\
+            Mechanical torque $T_{\mathrm{m}}$ & \SI{71.62}{\kilo\newton\meter} \\
+            \bottomrule
+        \end{tabular}
+    \end{table}
+
+    \end{document}
+#+END_EXAMPLE
+
+*Hasil compile*
+
+[[file:tables/main.png]]
+
+Yohan Sidik
+
+* Compiler
+** Miktex
+*** Ubuntu
+**** User Guide
+
+ [[https://docs.miktex.org/manual/]]
+
+**** Manual Install
+
+Cara /install/ Miktex ada di [[https://miktex.org/][Website Miktex]].
+
+:    $ pdflatex --version
+
+**** Update Package
+
+Update package dapat dilakukan melalui Miktex Console atau command line.
+
+*Via Command Line*
+
+:    $ mpm --update 
+
+**** Install Package
+
+*Via Command Line*
+
+:    $ mpm --install=<package name>
+
+Package (user mode) disimpan di
+
+:    /home/user/.miktex/texmfs/tex/install
+
+*Referensi*
+
+- [[https://miktex.org/packages/][Miktex packages]]
+
+**** TEXMF root directories
+
+[[https://miktex.org/kb/texmf-roots][Texmf root directories]]
+
+*** Docker
+
+Perlu diperhatikan di sini adalah folder yang bernama miktex. Folder
+tersebut digunakan untuk menyimpan /user data/. Termasuk apabila ada
+update dan upgrade packages.
+
+Folder miktex ini bukanlah folder yang biasa. Tetapi berupa docker
+volume. Dengan mendefinisikan folder volume, /user data/ tersebut dapat
+digunakan lagi apabila menjalankan miktex kembali. Prinsip dasarnya
+adalah, /user data/ akan hilang apabila re-run sebuah aplikasi. Tetapi
+dengan volume tersebut, maka bisa digunakan kembali. Bahkan bisa
+digunakan oleh container lainnya.
+
+Cara membuat volume miktex adalah:
+
+:    $ docker volume create --name miktex
+
+Untuk mengecek volume yang telah dibuat:
+
+:    $ docker volume ls
+
+Untuk inspeksi volume miktex:
+
+:    $ docker volume inspect miktex
+
+Untuk menjalankan miktex di dalam container:
+
+:    $ docker run -it -v miktex:/miktex/.miktex -v $(pwd):/miktex/work -e MIKTEX_GID=$(id -g) -e MIKTEX_UID=$(id -u) miktex/miktex /bin/bash
+
+Di luar container:
+
+:    $ docker run -it -v miktex:/miktex/.miktex -v $(pwd):/miktex/work -e MIKTEX_GID=$(id -g) -e MIKTEX_UID=$(id -u) miktex/miktex pdflatex -aux-directory=build main.tex
+
+*Tips*
+
+Ketika pertama kali /compile/ tex file, akan muncul /error/. Hal ini
+dikarenakan miktex image merupakan minimal instalasi dan /packages/-nya
+masih /missing/. Jalankanlah /command/ berikut ini terlebih dahulu:
+
+:    $ mpm --update --upgrade
+
+Kemudian jalankan lagi /command/ untuk /compile/.
+
+*Referensi*
+
+- [[https://github.com/MiKTeX/docker-miktex][Dockerized Miktex]]
+- [[https://docs.docker.com/storage/volumes/][Docker docs: use volumes]]
+
+** Issue
+*** Key Expired
+
+  Error saat melakukan *sudo apt-get update* perihal /key expired/.
+
+  Key-nya expire dan harus diperbaharui. Biasanya ini akan menjadi issue
+  di repo miktex di github.com/miktex. Pantaulah repo miktex untuk
+  mendapatkan update key terbaru dari maintainer.
+
+  Contoh /command/ untuk memperbaharui adalah:
+
+:      sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D6BC243565B2087BC3F897C9277A7293F59E4889
+
+  

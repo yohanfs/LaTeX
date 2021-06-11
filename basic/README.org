@@ -1,0 +1,69 @@
+#+STARTUP: overview
+
+* Basic LaTeX
+** Manual
+
+- [[https://www.overleaf.com/learn/latex/Main_Page][Dokumentasi dari Overleaf]]
+- [[https://www.namsu.de/][Dokumentasi dari namsu.de]]
+
+** Softwares/Packages/Tools
+
+- Tex distribution
+  - [[https://miktex.org/][Miktex]]
+  - [[https://tug.org/texlive/][Tex live]]
+  - [[https://www.texdev.net/2016/12/18/tex-on-windows-tex-live-versus-miktex-revisited/][Tex live vs Miktex]]
+- Editor
+  - [[https://www.texstudio.org/][Texstudio]]
+- [[http://www.bibtex.org/][Bibtex]]
+- [[https://ctan.mc1.root.project-creative.net/macros/latex/contrib/glossaries/glossaries-user.html][Glossaries]]
+
+** Command Line
+
+Berikut ini adalah /command/ untuk /compile/:
+
+- basic document
+
+:    $ pdflatex filename
+
+- include bibtex
+
+:    $ pdflatex filename
+:    $ bibtex filename
+:    $ pdflatex filename
+:    $ pdflatex filename
+
+- include glossaries
+
+:    $ pdflatex filename
+:    $ makeglossaries filename
+:    $ pdflatex filename
+:    $ pdflatex filename
+
+*Catatan*
+
+Pdflatex memiliki 4 /interaction modes/. Mode tersebut adalah untuk
+menampilkan proses compiling di terminal.
+
+- batchmode: tidak ada yang ditampilkan
+- nonstopmode: diagnostic message akan ditampilkan, tapi tidak ada
+  interaksi dengan user seperti batchmode
+- scrollmode: akan berhenti pada /missing files/ atau jika keyboard input dibutuhkan
+- errorstopmode: akan berhenti pada setiap error dan menunggu intervensi dari user
+
+Contoh penggunaan:
+
+:    $ pdflatex -interaction=batchmode filename
+
+*Referensi*
+
+- [[https://tex.stackexchange.com/questions/91592/where-to-find-official-and-extended-documentation-for-tex-latexs-commandlin][interaction modes]]
+
+** My Templates
+
+Berikut ini adalah template latex sederhana untuk keperluan penulisan
+dokumen biasa.
+
+- [[file:templates_ysi/yohan_template_article.tex][yohan_template_article.tex]]
+- [[file:templates_ysi/yohan_article.cls][yohan_article.cls]]
+
+[[file:images/templateSederhana.png]]
