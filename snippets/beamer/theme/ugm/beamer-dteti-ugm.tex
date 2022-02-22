@@ -1,0 +1,47 @@
+\documentclass[10pt,aspectratio=169]{beamer}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{sansmathaccent}
+\pdfmapfile{+sansmathaccent.map}
+
+% Use Beamer Theme
+\usetheme{Copenhagen}
+
+% Modify Counting Style in ToC
+\defbeamertemplate{subsection in toc}{bullets}{%
+  \leavevmode
+  \parbox[t]{1em}{\textbullet\hfill}%
+  \parbox[t]{\dimexpr\textwidth-1em\relax}{\inserttocsubsection}\par}
+\defbeamertemplate{section in toc}{sections numbered roman}{%
+  \leavevmode%
+  \MakeUppercase{\romannumeral\inserttocsectionnumber}.\ %
+  \inserttocsection\par}
+\setbeamertemplate{section in toc}[sections numbered roman]
+\setbeamertemplate{subsection in toc}[bullets]
+
+% Remove Header
+\setbeamertemplate{headline}{}
+
+% Modify Figure Caption
+\usepackage[labelsep=endash]{caption}
+\renewcommand{\figurename}{}
+
+% Define Graphics Path
+\graphicspath{{./theme/ugm/}{./figures/}}
+
+% Put Background Figure on Each Slides
+\usebackgroundtemplate%
+{
+	\parbox[c][\paperheight][c]{\paperwidth}{
+	\centering
+    \includegraphics[scale=1.0]{UGM_Logo_Blue.pdf}}
+}
+
+% Tikz Package
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepgfplotslibrary{fillbetween}
+\usepackage{subcaption}
+
+
